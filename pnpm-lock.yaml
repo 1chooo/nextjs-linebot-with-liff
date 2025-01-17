@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@line/bot-sdk':
+        specifier: ^9.5.1
+        version: 9.5.1
       '@line/liff':
         specifier: ^2.25.1
         version: 2.25.1
@@ -459,6 +462,10 @@ packages:
     resolution: {integrity: sha512-lm5VlCq9J0zoqa3RfGor2g2hwZOBxK9xsBqWz5s0WZPlGaq+JhXBC/cAPbuEIS+YTpPn+F22K9C6VRYEO8WE9A==}
     engines: {node: '>=18'}
 
+  '@line/bot-sdk@9.5.1':
+    resolution: {integrity: sha512-MnZh3rxxAX4q8rTy7jQbfXwr0T9U9+u9zWMWlOyXvGnrb8IR+74z+MDrcUcIDQeUP/zKnfU/irWjiktFBYQESA==}
+    engines: {node: '>=18'}
+
   '@line/liff@2.25.1':
     resolution: {integrity: sha512-sMP+WXCDI5mLuCN4vinqhLM5ULvWGLHJjVXg973KPc0ARyfbo9UOpw3FZNjpqt+7Tc9Y1YKEo1Zbol1nYfeplQ==}
 
@@ -571,6 +578,9 @@ packages:
 
   '@types/node@20.17.14':
     resolution: {integrity: sha512-w6qdYetNL5KRBiSClK/KWai+2IMEJuAj+EujKCumalFOwXtvOXaEan9AuwcRID2IcOIAWSIfR495hBtgKlx2zg==}
+
+  '@types/node@22.10.7':
+    resolution: {integrity: sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==}
 
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
@@ -2013,6 +2023,9 @@ packages:
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
@@ -2672,6 +2685,14 @@ snapshots:
       - debug
       - supports-color
 
+  '@line/bot-sdk@9.5.1':
+    dependencies:
+      '@types/node': 22.10.7
+    optionalDependencies:
+      axios: 1.7.9
+    transitivePeerDependencies:
+      - debug
+
   '@line/liff@2.25.1':
     dependencies:
       '@liff/analytics': 2.25.1(tslib@2.8.1)
@@ -2797,6 +2818,10 @@ snapshots:
   '@types/node@20.17.14':
     dependencies:
       undici-types: 6.19.8
+
+  '@types/node@22.10.7':
+    dependencies:
+      undici-types: 6.20.0
 
   '@types/react-dom@19.0.3(@types/react@19.0.7)':
     dependencies:
@@ -4548,6 +4573,8 @@ snapshots:
   undici-types@5.26.5: {}
 
   undici-types@6.19.8: {}
+
+  undici-types@6.20.0: {}
 
   unpipe@1.0.0: {}
 
