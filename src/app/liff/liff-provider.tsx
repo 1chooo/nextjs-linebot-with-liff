@@ -23,8 +23,8 @@ const LiffContext = createContext<LiffContextType>({
   liffError: null,
   userId: null,
   isLoggedIn: false,
-  login: () => { },
-  logout: () => { },
+  login: () => {},
+  logout: () => {},
 });
 
 export const LiffProvider = ({ children }: { children: ReactNode }) => {
@@ -79,11 +79,12 @@ export const LiffProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <LiffContext.Provider value={{ liff, liffError, userId, isLoggedIn, login, logout }}>
+    <LiffContext.Provider
+      value={{ liff, liffError, userId, isLoggedIn, login, logout }}
+    >
       {children}
     </LiffContext.Provider>
   );
 };
 
 export const useLiff = () => useContext(LiffContext);
-
