@@ -1,8 +1,14 @@
 import type { WebhookRequestBody } from "@line/bot-sdk"
-import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next"
+import type {
+  NextApiHandler,
+  NextApiRequest,
+  NextApiResponse
+} from "next"
 
 import * as line from "@/lib/line"
-import { getRandomSpecialProductsMessage } from "@/services/line-bot-services"
+import {
+  getRandomSpecialProductsMessage
+} from "@/services/line-bot-services"
 
 export const config = {
   api: {
@@ -87,4 +93,3 @@ const handler: NextApiHandler = async (req, res) => {
 }
 
 export default handler
-
