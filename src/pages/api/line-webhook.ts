@@ -1,5 +1,4 @@
 import type { WebhookRequestBody } from "@line/bot-sdk"
-import type { Middleware } from "@line/bot-sdk/lib/middleware"
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next"
 
 import * as line from "@/lib/line"
@@ -11,9 +10,9 @@ export const config = {
   },
 }
 
-function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: Middleware) {
+function runMiddleware(req: NextApiRequest, res: NextApiResponse) {
   return new Promise<void>((resolve, reject) => {
-    fn(req, res, (result) => {
+    line.middleware(req, res, (result) => {
       if (result instanceof Error) {
         reject(result)
       } else {
@@ -70,7 +69,7 @@ const handler: NextApiHandler = async (req, res) => {
   }
 
   try {
-    await runMiddleware(req, res, line.middleware)
+    await runMiddleware(req, res)
 
     const body: WebhookRequestBody = req.body
     await Promise.all(body.events.map(handleLineEvent))
