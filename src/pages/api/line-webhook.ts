@@ -3,7 +3,7 @@ import type { Middleware } from "@line/bot-sdk/lib/middleware"
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next"
 
 import * as line from "@/lib/line"
-import { getRandomSpecialProductsMessage } from "@/services/lineBotServices"
+import { getRandomSpecialProductsMessage } from "@/services/line-bot-services"
 
 export const config = {
   api: {

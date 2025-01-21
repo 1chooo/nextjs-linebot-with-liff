@@ -1,4 +1,6 @@
-import { getExpireProductsListBroadcast } from '@/services/lineBotService'
+import {
+  getExpireProductsListBroadcast
+} from '@/services/line-bot-services'
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
