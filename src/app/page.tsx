@@ -1,21 +1,12 @@
-// app/page.tsx
-
 "use client";
 
-import { useLiff } from "./liff/liff-provider";
 import { useEffect } from "react";
-import Head from "next/head";
+
+import { LiffProvider, useLiff } from "./liff/liff-provider";
 import styles from "@/styles/home.module.css";
 
-const Home = () => {
-  const {
-    liff,
-    liffError,
-    userId,
-    isLoggedIn,
-    login,
-    logout
-  } = useLiff();
+const HomeContent = () => {
+  const { liff, liffError, userId, isLoggedIn, login, logout } = useLiff();
 
   useEffect(() => {
     if (liff && isLoggedIn) {
@@ -47,13 +38,7 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <Head>
-        <title>LIFF App</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <div className={styles.container}>
       <main className={styles.main}>
         <h1>LIFF APP</h1>
         <p>LIFF init succeeded.</p>
@@ -71,4 +56,10 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default function Home() {
+  return (
+    <LiffProvider>
+      <HomeContent />
+    </LiffProvider>
+  );
+}
